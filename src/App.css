@@ -1,12 +1,27 @@
+#title{
+  background-color: rgb(212, 211, 211);
+}
+#card{
+  width:73px;
+  height:47px;
+  background-color: rgb(212, 211, 211);
+}
+#container img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
 .App {
   text-align: center;
 }
-
+.class{
+  background-color: red;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
