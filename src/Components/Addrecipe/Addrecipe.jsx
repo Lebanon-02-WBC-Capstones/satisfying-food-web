@@ -1,5 +1,8 @@
 import React from "react";
 const Addrecipe = () => {
+  function change(){
+    return alert("fafa");
+  }
   return (
     <div className="grid grid-cols-3 ">
       <div className=" col-start-1 box-content bg-yellow-200 text-red-500 font-bold h-50 w-20 p-4 rounded-l-lg">
@@ -15,7 +18,7 @@ const Addrecipe = () => {
       </div>
       <div className=" col-start-3 w-20 box-content bg-red-500 text-yellow-200 font-bold h-50 w-20 p-4 rounded-r-lg">
         <p className=" leading-none text-left  py-4">Share them with us!</p>
-        <button className="font-bold bg-yellow-200  rounded-lg text-red-500 text-base py-1 px-3">
+        <button className="font-bold bg-yellow-200 hover:bg-yellow-500 hover:text-red-600 rounded-lg text-red-500 text-base py-1 px-3" onClick={change}>
           Share
         </button>
       </div>
