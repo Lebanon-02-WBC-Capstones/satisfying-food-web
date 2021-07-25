@@ -1,0 +1,35 @@
+#roo {
+  background-color: burlywood;
+  width: 122px;
+  height: 202px;
+  border-radius: 12px;
+}
+#parent {
+  border-radius: 12px;
+}
+#img-container {
+  display: flex;
+
+  /* border-radius: 10%; */
+  /* margin:5px; */
+  justify-content: center;
+  align-items: center;
+}
+#img-container img {
+  display: flex;
+  /* justify-content: center; */
+  height: 114px;
+  width: 110px;
+  /* align-items: center; */
+  border-radius: 60%;
+  /* padding: 5px !important ; */
+  margin: 5px;
+}
+#parent {
+  background-color: chartreuse;
+}
+#title {
+  text-align: center;
+  font-family: "epilogue";
+  background-color: chocolate;
+}
