@@ -1,14 +1,12 @@
 import "./App.css";
 import React from "react";
-// import PropTypes from "prop-types";
-import TeamCardItem from "./Components/team-card-item/team-card-item.jsx";
-// import Test from "./Components/team-card-item/test";
+import TeamCardItem from "./components/TeamCardItem/TeamCardItem.jsx";
 
 function App() {
   const person = {
-    name: "Ahmad",
-    role: "Developer",
-    imageURL: "https://image.flaticon.com/icons/png/128/2922/2922510.png"
+    name: "Osama Abdullah",
+    role: "Leader",
+    imageURL: "https://image.flaticon.com/icons/png/128/2922/2922510.png",
   };
 
   return (
