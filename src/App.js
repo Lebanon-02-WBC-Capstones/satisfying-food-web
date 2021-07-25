@@ -1,13 +1,11 @@
 import "./App.css";
 import React from "react";
+import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Menu from "./components/Menu.jsx";
-import Navbar from "./components/Navbar";
-// import Navbar from "./components/Navbar.jsx";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Router>
         <Route path="/" exact />
         <Route path="/foodlists" />
