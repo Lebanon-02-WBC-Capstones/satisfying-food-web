@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
-import Footer from "./Components/Footer";
+import Footer from "./components/Footer";
+import Contact from "./components/Contact/contact";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
