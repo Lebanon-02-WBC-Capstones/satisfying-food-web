@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-function TeamCardItem(memberData) {
-  const { person } = memberData;
+function TeamCardItem(memberprops) {
+  const { person } = memberprops;
   return (
     <div className="flex flex-col items-center">
       <img
