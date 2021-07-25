@@ -1,0 +1,14 @@
+#title {
+  background-color: rgb(212, 211, 211);
+}
+#card {
+  width: 73px;
+  height: 47px;
+  background-color: rgb(212, 211, 211);
+}
+#container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
