@@ -13,11 +13,16 @@ const Addrecipe = () => {
           className=" object-cover h-full w-full"
         ></img>
       </div>
-      <div className=" col-start-3 w-20 box-content bg-red-500 text-yellow-200 font-bold h-50 w-20 p-4 rounded-r-lg">
-        <p className=" leading-none text-left  py-4">Share them with us!</p>
-        <button className="font-bold bg-yellow-200  rounded-lg text-red-500 text-base py-1 px-3">
-          Share
-        </button>
+      <div className=" col-start-3 w-20 box-content bg-red-500 font-bold h-50 w-20 p-4 rounded-r-lg">
+        <div className="flex flex-col justify-center">
+          <p className=" leading-none text-left text-yellow-200 py-4">
+            Share them with us!
+          </p>
+
+          <button className="bg-yellow-200 w-14  rounded-lg text-red-500 font-bold text-sm h-7 ">
+            Share
+          </button>
+        </div>
       </div>
     </div>
   );
