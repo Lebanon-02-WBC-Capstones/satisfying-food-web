@@ -1,12 +1,20 @@
 import "./App.css";
 import React from "react";
+import Footer from "./Components/Footer";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Welcome to the capstone projects, this is your initial react app</p>
-      </header>
+    <div>
+      <Router>
+        <Route path="/" exact />
+        <Route path="/foodlists" />
+        <Route path="/filter" />
+        <Route path="/categories" />
+        <Route path="/favorites" />
+        <Route path="/aboutus" />
+        <Footer />
+      </Router>
     </div>
   );
 }
