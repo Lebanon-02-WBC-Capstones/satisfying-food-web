@@ -1,13 +1,21 @@
 import "./App.css";
 import React from "react";
-import Addrecipe from "./components/Addrecipe/Addrecipe.jsx";
+import Footer from "./componentss/Footer";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <Addrecipe />
-      </header>
+    <div>
+      <Router>
+        <Route path="/" exact />
+        <Route path="/foodlists" />
+        <Route path="/filter" />
+        <Route path="/categories" />
+        <Route path="/favorites" />
+        <Route path="/aboutus" />
+        <Footer />
+      </Router>
     </div>
   );
 }
