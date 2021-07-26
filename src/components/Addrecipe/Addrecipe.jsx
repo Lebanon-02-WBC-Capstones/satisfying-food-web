@@ -1,5 +1,5 @@
 import React from "react";
-const Addrecipe = () => {
+const AddRecipe = () => {
   return (
     <div className="grid grid-cols-3 ">
       <div className=" col-start-1 box-content bg-yellow-200 text-red-500 font-bold h-50 w-20 p-4 rounded-l-lg">
@@ -28,4 +28,4 @@ const Addrecipe = () => {
   );
 };
 
-export default Addrecipe;
+export default AddRecipe;
