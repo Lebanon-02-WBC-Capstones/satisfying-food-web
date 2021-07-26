@@ -18,12 +18,13 @@
         "react"
     ],
     "rules": {
+        "react/prop-types": 0,
         "quotes": [
-            "error",
+            2,
             "double"
         ],
         "semi": [
-            "error",
+            2,
             "always"
         ],
         "no-console": 2
