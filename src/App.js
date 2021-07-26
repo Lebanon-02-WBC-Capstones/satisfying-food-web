@@ -1,12 +1,12 @@
 import "./App.css";
 import React from "react";
-import TeamCardItem from "./components/TeamCardItem/TeamCardItem.jsx";
+import TeamCardItem from "./Components/TeamCardItem/TeamCardItem.jsx";
 
 function App() {
   const person = {
     name: "Osama Abdullah",
     role: "Leader",
-    imageURL: "https://image.flaticon.com/icons/png/128/2922/2922510.png",
+    imageURL: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   };
 
   return (
