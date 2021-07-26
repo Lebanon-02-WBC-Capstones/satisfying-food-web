@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
-import TeamCardItem from "./Components/TeamCardItem/TeamCardItem.jsx";
+import Footer from "./Components/Footer";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   const person = {
@@ -11,9 +12,15 @@ function App() {
 
   return (
     <div>
-      <header>
-        <TeamCardItem person={person} />
-      </header>
+      <Router>
+        <Route path="/" exact />
+        <Route path="/foodlists" />
+        <Route path="/filter" />
+        <Route path="/categories" />
+        <Route path="/favorites" />
+        <Route path="/aboutus" />
+        <Footer />
+      </Router>
     </div>
   );
 }
