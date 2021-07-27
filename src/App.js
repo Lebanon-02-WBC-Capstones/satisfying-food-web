@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useContext } from "react";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { StateContext } from "./StateProvider";
 import Menu from "./components/Menu/Menu";
@@ -9,7 +10,7 @@ function App() {
   const [state] = useContext(StateContext);
   let menDisp = state.menuDisp;
   return (
-    <div className="App">
+    <div>
       <Router>
         <Route path="/" exact />
         <Route path="/foodlists" />

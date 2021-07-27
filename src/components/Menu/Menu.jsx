@@ -57,7 +57,7 @@ const Menu = () => {
       </div>
 
       <div>
-        <div>
+        <div className="text-center">
           <button onClick={change} className={"pb-5"}>
             <img src={X} alt="X-icon" />
           </button>
