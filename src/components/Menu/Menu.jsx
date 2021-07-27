@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-//import PropTypes from "prop-types";
 import Ur from "../../images/user.svg";
 import X from "../../images/button-x.svg";
 import { StateContext } from "../../StateProvider";
