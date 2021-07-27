@@ -1,9 +1,9 @@
 import React from "react";
-import Fb from "../images/facebook.svg";
-import In from "../images/instagram.svg";
-import Yt from "../images/youtube.svg";
-import Tw from "../images/Twitter.svg";
-import Ar from "../images/arrow.svg";
+import Fb from "../../images/facebook.svg";
+import In from "../../images/instagram.svg";
+import Yt from "../../images/youtube.svg";
+import Tw from "../../images/Twitter.svg";
+import Ar from "../../images/arrow.svg";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
