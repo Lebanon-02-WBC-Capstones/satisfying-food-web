@@ -1,11 +1,13 @@
 import "./App.css";
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Menu from "./components/Menu.jsx";
-import Navbar from "./components/Navbar";
-// import Navbar from "./components/Navbar.jsx";
+import { StateContext } from "./StateProvider";
+import Menu from "./components/Menu/Menu";
+import Navbar from "./components/Menu/Navbar";
 
 function App() {
+  const [state] = useContext(StateContext);
+  let menDisp = state.menuDisp;
   return (
     <div className="App">
       <Router>
@@ -16,8 +18,7 @@ function App() {
         <Route path="/favorites" />
         <Route path="/aboutus" />
         <Route path="/signin" />
-        <Navbar />
-        <Menu />
+        {menDisp ? <Menu /> : <Navbar />}
       </Router>
     </div>
   );

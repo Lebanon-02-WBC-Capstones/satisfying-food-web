@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Ur from "../images/user.svg";
-import X from "../images/B-x.svg";
+//import PropTypes from "prop-types";
+import Ur from "../../images/user.svg";
+import X from "../../images/button-x.svg";
+import { StateContext } from "../../StateProvider";
 
 const Menu = () => {
+  const [state, dispatch] = useContext(StateContext);
+
+  const change = () => {
+    state;
+    dispatch({ type: "SET_MENU", menuDisp: false });
+  };
   return (
     <div
       className={
-        "w-full h-screen bg-ell-back bg-cover flex flex-col justify-between "
+        "w-full h-screen bg-ell-back bg-cover bg-centre absolute flex flex-col justify-between "
       }
     >
       <div className={" pt-8 text-white text-left pl-8 space-y-7 text-lg "}>
@@ -50,7 +58,7 @@ const Menu = () => {
 
       <div>
         <div>
-          <button className={"pb-5"}>
+          <button onClick={change} className={"pb-5"}>
             <img src={X} alt="X-icon" />
           </button>
         </div>
