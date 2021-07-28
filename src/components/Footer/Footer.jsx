@@ -14,20 +14,20 @@ const Footer = () => {
       </div>
       <div className={"pt-2 pl-5 pr-40 flex justify-between"}>
         <a href="#" target="_blank">
-          <img className={"hover:bg-yellow-500"} src={Fb} alt="Facebook-Icon" />{" "}
+          <img className={"hover:bg-yellow-500"} src={Fb} alt="Facebook-Icon" />
         </a>
         <a href="#" target="_blank">
           <img
             className={"hover:bg-yellow-500"}
             src={In}
             alt="Instagram-Icon"
-          />{" "}
+          />
         </a>
         <a href="#" target="_blank">
-          <img className={"hover:bg-yellow-500"} src={Tw} alt="Twitter-Icon" />{" "}
+          <img className={"hover:bg-yellow-500"} src={Tw} alt="Twitter-Icon" />
         </a>
         <a href="#" target="_blank">
-          <img className={"hover:bg-yellow-500"} src={Yt} alt="Youtube-Icon" />{" "}
+          <img className={"hover:bg-yellow-500"} src={Yt} alt="Youtube-Icon" />
         </a>
       </div>
       <div className={"pt-8 text-white pl-5 text-lg"}>
@@ -58,7 +58,7 @@ const Footer = () => {
             className={"hover:bg-yellow-500 "}
             src={Ar}
             alt="Facebook-Icon"
-          />{" "}
+          />
         </a>
       </div>
     </div>

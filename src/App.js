@@ -1,5 +1,6 @@
 import "./App.css";
-import React, { useContext } from "react";
+import React from "react";
+import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import { StateContext } from "./StateProvider";
