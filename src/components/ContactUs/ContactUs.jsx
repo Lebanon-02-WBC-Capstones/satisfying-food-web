@@ -1,14 +1,15 @@
 import React from "react";
 
-const ContactUs2 = () => {
+const ContactUs = () => {
   return (
-    <div className="w-72 h-auto py-8">
+    <div className="w-full h-auto py-8">
       <form className="bg-white  rounded-2xl px-8 pt-6 pb-8 mb-4 border-2 border-orange-500">
         <div className="mb-4">
           <h1 className="block text-orange-500  text-lg font-medium mb-2">
             Contact Us!
           </h1>
         </div>
+
         <div className="mb-4">
           <input
             className=" appearance-none border-2 rounded-full w-full p-4 text-gray-700 h-12 text-sm leading-tight focus:outline-none focus:border-orange-400 focus:shadow-outline placeholder-orange-500 "
@@ -36,10 +37,11 @@ const ContactUs2 = () => {
             required
           />
         </div>
+
         <div className=" justify-center">
           <button
             className="bg-orange-500 hover:bg-gray-400 w-36 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
-            type="button"
+            type="submit"
           >
             Send
           </button>
@@ -49,4 +51,4 @@ const ContactUs2 = () => {
   );
 };
 
-export default ContactUs2;
+export default ContactUs;
