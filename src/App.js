@@ -1,7 +1,6 @@
 import "./App.css";
 import React from "react";
-// import Footer from "./components/Footer/Footer";
-import SubscribeToNewsLetter from "./components/SubscribeToNewsLetter/SubscribeToNewsLetter";
+import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
@@ -14,8 +13,7 @@ function App() {
         <Route path="/categories" />
         <Route path="/favorites" />
         <Route path="/aboutus" />
-        {/* <Footer /> */}
-        <SubscribeToNewsLetter />
+        <Footer />
       </Router>
     </div>
   );
