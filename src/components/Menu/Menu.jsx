@@ -14,10 +14,14 @@ const Menu = () => {
   return (
     <div
       className={
-        "w-full h-screen bg-ell-back bg-cover bg-centre absolute flex flex-col justify-between "
+        "w-full h-screen bg-ell-back bg-cover bg-centre absolute flex flex-col justify-between  "
       }
     >
-      <div className={" pt-8 text-white text-left pl-8 space-y-7 text-lg "}>
+      <div
+        className={
+          " pt-8 text-white text-left pl-8 space-y-7 text-lg  animate-boun-slow "
+        }
+      >
         <div className={"flex justify-between"}>
           <Link className={"pt-2"} to={"/"}>
             <p>Home</p>

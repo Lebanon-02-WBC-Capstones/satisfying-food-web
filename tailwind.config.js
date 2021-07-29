@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         body: ["Epilogue"]
       },
+      animation: {
+        'boun-slow': 'bounce 800ms 1.5 ',
+       }
     },
   },
   variants: {
