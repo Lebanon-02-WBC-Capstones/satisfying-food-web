@@ -49,20 +49,18 @@ const AddRecipeForm = () => {
           />
         </label>
 
-        <div className="relative inline-block w-full text-orange-500 rounded-full shadow-sm mt-4 h-11">
+        <div className="relative inline-block w-full text-orange-500 rounded-2xl shadow-sm mt-4 h-16">
           <select
-            className="w-full h-10 pl-4 pr-6 text-sm placeholder-orange-500 border-2 rounded-full appearance-none focus:none h-11"
-            placeholder="Categories"
+            className="w-full h-10 pl-4 pr-6 text-sm placeholder-orange-500 border-2 rounded-2xl focus:none h-16"
+            placeholder="Categories" multiple
           >
-            <option>Categories</option>
-            <option>Another option</option>
-            <option>And one more</option>
+            <option className="font-medium text-orange-500" disabled>Categories</option>
+            <option>Fruit</option>
+            <option>Lunch</option>
+            <option>Veggie</option>
+            <option>Pizza</option>
+            <option>Breakfast</option>
           </select>
-          <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-            <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-              <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path>
-            </svg>
-          </div>
         </div>
 
         <div>
