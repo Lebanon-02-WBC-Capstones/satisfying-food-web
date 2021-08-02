@@ -8,17 +8,17 @@ function FilterTime({ time }) {
     "shadow-lg rounded-lg bg-gray-100 flex flex-col text-sm h-8 w-12 justify-center items-center border-solid border border-yellow-600 border-opacity-40 text-yellow-600";
   let clicked =
     "shadow-lg rounded-lg bg-yellow-600 flex flex-col text-sm h-8 w-12 justify-center items-center border-solid border border-yellow-700 text-white";
-  const [divClass, setClass] = useState(notClicked);
+  const [isClickedStyle, setIsClickedStyle] = useState(notClicked);
   return (
     <div
       className="mt-7 m-px"
       onClick={() => {
-        if (count % 2 != 0) setClass(clicked);
-        else setClass(notClicked);
+        if (count % 2 != 0) setIsClickedStyle(clicked);
+        else setIsClickedStyle(notClicked);
         count++;
       }}
     >
-      <div className={divClass}>
+      <div className={isClickedStyle}>
         <img
           src="https://image.flaticon.com/icons/png/128/714/714903.png"
           className="w-8 h-8 static -mt-8 "
