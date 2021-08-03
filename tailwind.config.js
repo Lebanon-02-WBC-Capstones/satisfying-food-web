@@ -8,6 +8,9 @@ module.exports = {
         orange : colors.orange
      
       },
+      width: {
+        "26": "6.5rem"
+      },
       fontFamily :{
         body:["Epilogue" ]
       },
