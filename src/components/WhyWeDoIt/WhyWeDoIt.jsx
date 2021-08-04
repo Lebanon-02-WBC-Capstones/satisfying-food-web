@@ -3,7 +3,7 @@ import heart from "./like-heart.svg";
 
 function WhyWeDoIt() {
   return (
-    <div className="flex flex-col items-center w-72 h-72 shadow-md p-5 rounded-lg border">
+    <div className="flex flex-col items-center w-full h-72 shadow-md p-5 m-2 rounded-lg border">
       <img src={heart} alt="Heart" />
       <p className="text-3xl font-bold text-center text-orange-500 mt-2">
         Why we do it?
