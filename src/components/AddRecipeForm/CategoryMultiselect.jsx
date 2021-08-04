@@ -16,13 +16,15 @@ const Multiselect = ({ categories, recipe, setRecipe }) => {
   };
   // adds new item to multiselect
   const addTag = (item) => {
-    setSelected(selectedItems.concat(item));
-    setDropdown(false);
-    console.log(recipe);
-    console.log(selectedItems);
-    setRecipe({ ...recipe, categories: selectedItems });
-    console.log(recipe);
-    setPlaceHolder("");
+    if(!selectedItems.includes(item)) {
+      setSelected(selectedItems.concat(item));
+      setDropdown(false);
+      console.log(recipe);
+      console.log(selectedItems);
+      setRecipe({ ...recipe, categories: selectedItems });
+      console.log(recipe);
+      setPlaceHolder("");
+    }
   };
   // removes item from multiselect
   const removeTag = (item) => {
