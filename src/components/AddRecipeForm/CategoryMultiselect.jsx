@@ -17,22 +17,22 @@ const Multiselect = ({ categories, recipe, setRecipe }) => {
   // adds new item to multiselect
   const addTag = (item) => {
     if(!selectedItems.includes(item)) {
-      setSelected(selectedItems.concat(item));
-      setDropdown(false);
-      console.log(recipe);
-      console.log(selectedItems);
-      setRecipe({ ...recipe, categories: selectedItems });
-      console.log(recipe);
-      setPlaceHolder("");
+
+      setSelected(prevState => [...prevState, item]);
+    setDropdown(false); 
+    const newSelected = [...selectedItems, item];
+    setRecipe({ ...recipe, categories: newSelected });
+    setPlaceHolder("");
     }
   };
   // removes item from multiselect
   const removeTag = (item) => {
     if (selectedItems.length === 1) setPlaceHolder("Categories");
     const filtered = selectedItems.filter((e) => e !== item);
-    console.log(selectedItems.length);
     setSelected(filtered);
-    setRecipe({ ...recipe, categories: selectedItems });
+    const newSelected = [...filtered];
+    setRecipe({ ...recipe, categories: newSelected });
+
   };
 
   return (
