@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-function Food({ img, title, cal, time, id,category }) {
+function Food({ img, title, cal, time, id, category }) {
   let count = 0;
   const [image, setImage] = useState(
     "https://image.flaticon.com/icons/png/128/833/833300.png"

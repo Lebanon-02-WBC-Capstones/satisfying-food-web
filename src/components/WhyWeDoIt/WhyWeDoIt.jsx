@@ -9,10 +9,10 @@ function WhyWeDoIt() {
         Why we do it?
       </p>
       <div className="w-48 ml-3">
-      <p className="text-xl mt-3">
-        Our goal is to make cooking easier. With Satisfying Food, you can learn,
-        share your recipes, and enjoy all kind of food.
-      </p>
+        <p className="text-xl mt-3">
+          Our goal is to make cooking easier. With Satisfying Food, you can
+          learn, share your recipes, and enjoy all kind of food.
+        </p>
       </div>
     </div>
   );

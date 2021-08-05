@@ -1,8 +1,13 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import React from "react";
 import PropTypes from "prop-types";
-function Category({ image, title }) {
+function Category({ image, title, cat, getCat }) {
   return (
-    <div className="rounded-lg shadow-2xl w-24 h-full bg-gray-100 py-1 m-2 hover:shadow-xl transition-all flex-none content-around">
+    <div
+      className="rounded-lg shadow-2xl w-24 h-full bg-gray-100 py-1 m-2 hover:shadow-xl transition-all flex-none content-around"
+      onClick={() => getCat(title)}
+    >
       <img
         src={image}
         alt="category-icon"
