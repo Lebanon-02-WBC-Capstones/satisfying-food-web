@@ -64,10 +64,10 @@ const AddRecipeForm = () => {
           </h1>
         </div>
 
-        <div className="mb-1 w-full flex justify-between flex-wrap">
+        <div className="mb-1 w-full flex justify-start flex-wrap">
           {recipe.ingredients.map((ing, index) => (
             <input
-              className="appearance-none border-2 mb-1 rounded-full w-26 p-4 text-gray-700 h-8 text-xs leading-tight focus:outline-none focus:border-orange-400 focus:shadow-outline placeholder-orange-500 "
+              className="appearance-none border-2 mb-1 mr-1 rounded-full w-26 p-4 text-gray-700 h-8 text-xs leading-tight focus:outline-none focus:border-orange-400 focus:shadow-outline placeholder-orange-500 "
               key={index}
               id={"ing-" + index}
               type="text"
@@ -90,7 +90,7 @@ const AddRecipeForm = () => {
             onClick={() => {
               setRecipe({
                 ...recipe,
-                ingredients: recipe.ingredients.concat("", "", ""),
+                ingredients: recipe.ingredients.concat(""),
               });
             }}
           >
@@ -130,7 +130,7 @@ const AddRecipeForm = () => {
             onClick={() => {
               setRecipe({
                 ...recipe,
-                directions: recipe.directions.concat("", "", ""),
+                directions: recipe.directions.concat(""),
               });
             }}
           >

@@ -9,7 +9,7 @@ module.exports = {
      
       },
       width: {
-        "26": "6.5rem"
+        "26": "6.8rem"
       },
       fontFamily :{
         body:["Epilogue" ]
