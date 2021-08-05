@@ -16,13 +16,12 @@ const Multiselect = ({ categories, recipe, setRecipe }) => {
   };
   // adds new item to multiselect
   const addTag = (item) => {
-    if(!selectedItems.includes(item)) {
-
-      setSelected(prevState => [...prevState, item]);
-    setDropdown(false); 
-    const newSelected = [...selectedItems, item];
-    setRecipe({ ...recipe, categories: newSelected });
-    setPlaceHolder("");
+    if (!selectedItems.includes(item)) {
+      setSelected((prevState) => [...prevState, item]);
+      setDropdown(false);
+      const newSelected = [...selectedItems, item];
+      setRecipe({ ...recipe, categories: newSelected });
+      setPlaceHolder("");
     }
   };
   // removes item from multiselect
@@ -32,7 +31,6 @@ const Multiselect = ({ categories, recipe, setRecipe }) => {
     setSelected(filtered);
     const newSelected = [...filtered];
     setRecipe({ ...recipe, categories: newSelected });
-
   };
 
   return (
