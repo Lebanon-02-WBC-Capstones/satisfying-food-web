@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 /* eslint no-unused-vars : "off" */
@@ -11,7 +12,8 @@ import Food from "../Food-item-card/Food";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 function Page() {
   const [clickedCategory,setClickedCategory] = useState("");
-  const [array,setArray] = useState([]);
+  const [search,setSearch]=useState("");
+ const [food,setFood] = useState([]);
   const FoodArray = [
   {img:"https://blog.radissonblu.com/wp-content/uploads/2019/05/GettyImages-493613257.jpg",title:"Kibbe",id:"99",cal:"260",time:"10",category:"meat"},
   {img:"https://www.abouther.com/sites/default/files/2018/05/11/shutterstock_248472739.jpg",title:"Hummus",time:"15",cal:"178",id:"510",category:"lunch"},
@@ -41,16 +43,17 @@ const Foods = FoodArray.map((item) => <Food id={item.id} img={item.img} title={i
 const Filtered = FoodArray.filter((item) => item.category.toLowerCase() == clickedCategory.toLowerCase());
 const FilteredArray = Filtered.map(item =><Food id={item.id} img={item.img} title={item.title} time={item.time} cal={item.cal}/> );
 const handleSearch = (searchText)=>{
-  try{
-setArray( FoodArray.filter((item) => item.title.toLowerCase() == searchText));
-console.log(searchText);
-console.log(array);
-  }
-  catch{
-    console.log("error");
-  }
+setSearch(searchText);
 
+ whatever = FoodArray.filter((item) => item.title.toLowerCase() == searchText.toLowerCase());
+  whatever2 = whatever.map(item =><Food id={item.id} img={item.img} title={item.title} time={item.time} cal={item.cal}/> );
+  setFood(whatever2);
+console.log(food);
+console.log(whatever2);
 };
+
+const array= FoodArray.filter((item) => item.title.toLowerCase() == search);//
+console.log(search);
 return (
       
       <div className="">
@@ -75,8 +78,8 @@ return (
         <div className="w-full flex flex-wrap content-around justify-center ">
 
 
-        {clickedCategory ? FilteredArray :Foods}
-        {/* {array} */}
+        {/* {clickedCategory ? FilteredArray :Foods} */}
+        {food}
         </div>
         </div>
      </div>
