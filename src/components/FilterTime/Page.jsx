@@ -1,8 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-console */
-/* eslint-disable react/prop-types */
-/* eslint no-unused-vars : "off" */
-/* eslint-disable react/jsx-key */
 import React from "react";
 import { useState } from "react";
 import PropTypes from "prop-types";
