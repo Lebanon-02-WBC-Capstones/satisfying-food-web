@@ -5,7 +5,7 @@ const ContactUs = () => {
     <div className="w-full h-auto py-8">
       <form className="bg-white  rounded-2xl px-8 pt-6 pb-8 mb-4 border-2 border-orange-500">
         <div className="mb-4">
-          <h1 className="block text-orange-500  text-lg font-medium mb-2">
+          <h1 className="block text-orange-500 text-lg font-medium mb-2">
             Contact Us!
           </h1>
         </div>
@@ -38,7 +38,7 @@ const ContactUs = () => {
           />
         </div>
 
-        <div className=" justify-center">
+        <div className="flex justify-center">
           <button
             className="bg-orange-500 hover:bg-gray-400 w-36 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
             type="submit"

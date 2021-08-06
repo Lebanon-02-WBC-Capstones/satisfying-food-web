@@ -1,12 +1,12 @@
 import React from "react";
-import heart from "./like-heart.svg";
+import idea from "./idea.svg";
 
-function WhyWeDoIt() {
+function WhatWeDo() {
   return (
     <div className="flex flex-col items-center w-full h-72 shadow-md p-5 rounded-lg border">
-      <img src={heart} alt="Heart" />
+      <img src={idea} alt="Heart" />
       <p className="text-3xl font-bold text-center text-orange-500 mt-2">
-        Why we do it?
+        What we do?
       </p>
       <div className="w-48 ml-3">
         <p className="text-xl mt-3">
@@ -18,4 +18,4 @@ function WhyWeDoIt() {
   );
 }
 
-export default WhyWeDoIt;
+export default WhatWeDo;
