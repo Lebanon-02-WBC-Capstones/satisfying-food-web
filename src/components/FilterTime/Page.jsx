@@ -1,14 +1,20 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-console */
+/* eslint-disable react/prop-types */
+/* eslint no-unused-vars : "off" */
+/* eslint-disable react/jsx-key */
 import React from "react";
 import { useState } from "react";
 import PropTypes from "prop-types";
-import Search from "../SearchBar/SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import Category from "../CategoryCard/Category";
 import Food from "../Food-item-card/Food";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 function Page() {
   const [clickedCategory,setClickedCategory] = useState("");
   const [search,setSearch]=useState("");
- const [food,setFood] = useState([]);
+  const [food,setFood] = useState([]);
+  const [showSearchResult,setShowSearch] = useState(false);
   const FoodArray = [
   {img:"https://blog.radissonblu.com/wp-content/uploads/2019/05/GettyImages-493613257.jpg",title:"Kibbe",id:"99",cal:"260",time:"10",category:"meat"},
   {img:"https://www.abouther.com/sites/default/files/2018/05/11/shutterstock_248472739.jpg",title:"Hummus",time:"15",cal:"178",id:"510",category:"lunch"},
@@ -32,23 +38,26 @@ const categoryArray=
   {title:"Dinner",image:"https://image.flaticon.com/icons/png/128/3480/3480618.png"}
   
 ];
-const Categories = categoryArray.map((cat)=><Category image={cat.image} title={cat.title} getCat={clickedCategory =>setClickedCategory(clickedCategory)}/>);
+const Categories = categoryArray.map((cat)=><Category image={cat.image} title={cat.title} getCat={clickedCategory =>{setClickedCategory(clickedCategory);
+  setShowSearch(false);}}/>);
 const Foods = FoodArray.map((item) => <Food id={item.id} img={item.img} title={item.title} time={item.time} cal={item.cal}/>
 );
 const Filtered = FoodArray.filter((item) => item.category.toLowerCase() == clickedCategory.toLowerCase());
-const FilteredArray = Filtered.map(item =><Food id={item.id} img={item.img} title={item.title} time={item.time} cal={item.cal}/> );
-const handleSearch = (searchText)=>{
+let FilteredArray = Filtered.map(item =><Food id={item.id} img={item.img} title={item.title} time={item.time} cal={item.cal}/> );
+const handleSearch = (searchText) => {
 setSearch(searchText);
-
- whatever = FoodArray.filter((item) => item.title.toLowerCase() == searchText.toLowerCase());
-  whatever2 = whatever.map(item =><Food id={item.id} img={item.img} title={item.title} time={item.time} cal={item.cal}/> );
-  setFood(whatever2);
-console.log(food);
-console.log(whatever2);
+console.log(FoodArray);
+const whatever = FoodArray.filter((item) => item.title.toLowerCase() == searchText.toLowerCase());
+ console.log(whatever);
+FilteredArray = whatever.map(item =><Food id={item.id} img={item.img} title={item.title} time={item.time} cal={item.cal}/> );
+setFood(FilteredArray);
+setShowSearch(true);
 };
 
-const array= FoodArray.filter((item) => item.title.toLowerCase() == search);//
+const array= FoodArray.filter((item) => item.title.toLowerCase() == search);
 console.log(search);
+const lol = clickedCategory ? FilteredArray :Foods;
+
 return (
       
       <div className="">
@@ -60,7 +69,7 @@ return (
         id="search"
         className="flex w-full h-full align-center justify-center mt-4 "
       >
-        <Search onSearch={handleSearch} />
+        <SearchBar onSearch={handleSearch} />
       </div>
       <div
         id="categories"
@@ -72,9 +81,9 @@ return (
         <div id="align-food-div-center" className="flex align-center">
         <div className="w-full flex flex-wrap content-around justify-center ">
 
-
-        {/* {clickedCategory ? FilteredArray :Foods} */}
-        {food}
+      {showSearchResult ? food: lol}
+        {/* {FilteredArray}
+        {food} */}
         </div>
         </div>
      </div>
