@@ -11,9 +11,7 @@ import Food from "../Food-item-card/Food";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 function Page() {
   const [clickedCategory,setClickedCategory] = useState("");
-  function handle(title){
-    setClickedCategory(title);
-  }
+  const [array,setArray] = useState([]);
   const FoodArray = [
   {img:"https://blog.radissonblu.com/wp-content/uploads/2019/05/GettyImages-493613257.jpg",title:"Kibbe",id:"99",cal:"260",time:"10",category:"meat"},
   {img:"https://www.abouther.com/sites/default/files/2018/05/11/shutterstock_248472739.jpg",title:"Hummus",time:"15",cal:"178",id:"510",category:"lunch"},
@@ -42,11 +40,20 @@ const Foods = FoodArray.map((item) => <Food id={item.id} img={item.img} title={i
 );
 const Filtered = FoodArray.filter((item) => item.category.toLowerCase() == clickedCategory.toLowerCase());
 const FilteredArray = Filtered.map(item =><Food id={item.id} img={item.img} title={item.title} time={item.time} cal={item.cal}/> );
-console.log(Filtered);
-  return (
+const handleSearch = (searchText)=>{
+  try{
+setArray( FoodArray.filter((item) => item.title.toLowerCase() == searchText));
+console.log(searchText);
+console.log(array);
+  }
+  catch{
+    console.log("error");
+  }
+
+};
+return (
       
       <div className="">
-        <h1>{clickedCategory + " here"}</h1>
       <div className="w-full h-11 "></div>
       <div className="w-full h-9  flex align-center justify-center text-yellow-500 text-3xl  font-semibold flex-nowarp">
         <p>Let&apos;s Eat Quality Food</p>
@@ -55,7 +62,7 @@ console.log(Filtered);
         id="search"
         className="flex w-full h-full align-center justify-center mt-4 "
       >
-        <Search />
+        <Search onSearch={handleSearch} />
       </div>
       <div
         id="categories"
@@ -66,7 +73,10 @@ console.log(Filtered);
         </div>
         <div id="align-food-div-center" className="flex align-center">
         <div className="w-full flex flex-wrap content-around justify-center ">
+
+
         {clickedCategory ? FilteredArray :Foods}
+        {/* {array} */}
         </div>
         </div>
      </div>

@@ -13,7 +13,9 @@ const SearchBar = (props) => {
   return (
     <form
       className="flex justify-center m-10  border border-gray-400 text-gray-400 rounded-full"
-      onSubmit={() => onSearch(searchText)}
+      onSubmit={() => {onSearch(searchText);
+        event.preventDefault();
+      }}
     >
       <button
         type="submit"
