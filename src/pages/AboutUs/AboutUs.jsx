@@ -1,12 +1,22 @@
-import React from "react";
-import aboutUsLogo from "./About_Us.svg";
+import {React,useContext} from "react";
 import WhyWeDoIt from "../../components/WhyWeDoIt/WhyWeDoIt";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
 import WhoWeAre from "../../components/WhoWeAre/WhoWeAre";
 import TeamCardItem from "../../components/TeamCardItem/TeamCardItem";
 import ContactUs from "../../components/ContactUs/ContactUs";
+import { StateContext } from "../.././StateProvider";
+import {useHistory} from "react-router-dom";
 
 function AboutUs() {
+  const [state,dispatch] = useContext(StateContext);
+  const history = useHistory();
+
+  const showMenu = () => {
+    history.goBack();
+    state;
+    dispatch({ type: "SET_MENU", menuDisp: true });
+  };
+
   const persons = [
     {
       name: "Osama Abdullah",
@@ -47,8 +57,8 @@ function AboutUs() {
 
   return (
     <div>
-      <div>
-        <img src={aboutUsLogo} alt="About us logo" className="w-full" />
+      <div className="bg-about-us-bg-image w-full h-42 p-2">
+        <div className="border-t-4 border-b-4 border-white w-8 pt-2 pb-2" onClick={showMenu}><h1 className="border-t-4 border-white w-8"></h1></div>
       </div>
       <div className="m-16 mr-12 ml-12">
         <WhatWeDo />
