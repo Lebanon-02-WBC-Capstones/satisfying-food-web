@@ -13,7 +13,7 @@ module.exports = {
         "26": "6.8rem"
       },
       height: {
-        "42": "10.9rem"
+        "42": "10.875rem"
       },
       backgroundImage: theme => ({
         'ell-back': "url('/src/images/menuWall.svg')",
