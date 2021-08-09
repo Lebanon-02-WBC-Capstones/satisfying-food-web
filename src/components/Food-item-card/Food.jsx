@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-function Food({ img, title, cal, time, id, category }) {
+function Food({ img, title, cal, time, id, categories,ingredients }) {
   let count = 0;
   const [image, setImage] = useState(
     "https://image.flaticon.com/icons/png/128/833/833300.png"
@@ -19,9 +20,9 @@ function Food({ img, title, cal, time, id, category }) {
       className="bg-white w-40 h-56 rounded-lg shadow-2xl mt-6 mr-3 ml-3"
       id="main-card"
       onClick={handleClick}
-    >
-      <div id="img-container" className="bg-white w-full h-36 rounded-t-lg">
-        <img src={img} className="rounded-t-lg w-full h-full" alt={category} />
+    >{categories}
+      <div id="img-container" className="bg-white w-full h-36 rounded-t-lg" >
+        <img src={img} className="rounded-t-lg w-full h-full"  />
       </div>
       <div id="info-container" className="flex bg-white">
         <div id="title" className="flex w-3/4 bg-white">
@@ -91,6 +92,8 @@ Food.defaultProps = {
   cal: "0",
   time: "0",
   id: "0",
+  ingredients:[],
+  category:[]
 };
 Food.prototypes = {
   img: PropTypes.string,
@@ -98,5 +101,7 @@ Food.prototypes = {
   id: PropTypes.string,
   cal: PropTypes.string,
   time: PropTypes.string,
+  ingredients: PropTypes.array,
+  categories: PropTypes.array
 };
 export default Food;

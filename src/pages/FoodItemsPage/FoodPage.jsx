@@ -119,6 +119,8 @@ function Page() {
       title={item.title}
       time={item.time}
       cal={item.cal}
+      category={item.category}
+      ingredients={item.ingredients}
     />
   ));
   const Filtered = FoodArray.filter(
@@ -136,7 +138,7 @@ function Page() {
   ));
   const handleSearch = (searchText) => {
     const whatever = FoodArray.filter(
-      (item) => item.title.toLowerCase() == searchText.toLowerCase()
+      (item) => item.title.toLowerCase().startsWith(searchText.toLowerCase())
     );
     FilteredArray = whatever.map((item) => (
       <Food
