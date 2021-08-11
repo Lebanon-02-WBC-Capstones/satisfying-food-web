@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
@@ -32,7 +29,7 @@ const removeItem = (array,item)=>{
   }
   return (
     <div
-      className="bg-white w-40 h-56 rounded-lg shadow-2xl mt-6 mr-3 ml-3"
+      className=" w-40 h-56 rounded-lg shadow-2xl mt-6 mr-3 ml-3"
       id="main-card"
       onClick={handleClick}
     >{categories}
@@ -69,7 +66,6 @@ const removeItem = (array,item)=>{
               }
               count++;
                fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
-              console.log(fav);
               
             }
           }
