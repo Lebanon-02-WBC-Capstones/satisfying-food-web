@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from "react";
@@ -5,6 +6,20 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 function Food({ img, title, cal, time, id, categories,ingredients }) {
+  const storage = window.localStorage;
+  var fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
+  const currentItem = {
+    title:title,img:img,cal:cal,time:time,id:id,categories:categories,ingredients:ingredients
+  };
+const removeItem = (array,item)=>{
+  const index = array.findIndex((element) =>JSON.stringify(element)==JSON.stringify(item));
+  if(index!=-1){
+    array.splice(index,1);
+    return array;
+  }
+};
+
+
   let count = 0;
   const [image, setImage] = useState(
     "https://image.flaticon.com/icons/png/128/833/833300.png"
@@ -35,16 +50,29 @@ function Food({ img, title, cal, time, id, categories,ingredients }) {
             alt="Heart-icon"
             className="w-3/5 flex justify-center content-center mx-auto pt-2"
             onClick={() => {
-              if (count % 2 == 0)
+              if (count % 2 == 0){
                 setImage(
                   "https://image.flaticon.com/icons/png/128/833/833300.png"
                 );
-              else
+                fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
+
+                removeItem(fav,currentItem);
+                storage.setItem("fav",JSON.stringify(fav));
+
+              }
+              else{
                 setImage(
                   "https://image.flaticon.com/icons/png/128/833/833472.png"
-                );
+                );  
+                fav.push(currentItem);
+                storage.setItem("fav",JSON.stringify(fav));
+              }
               count++;
-            }}
+               fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
+              console.log(fav);
+              
+            }
+          }
           />
         </div>
       </div>

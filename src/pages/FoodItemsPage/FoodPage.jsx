@@ -3,7 +3,7 @@ import { useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Category from "../../components/CategoryCard/Category";
 import Food from "../../components/Food-item-card/Food";
-function Page() {
+function FoodPage() {
   const [clickedCategory, setClickedCategory] = useState("");
   const [food, setFood] = useState([]);
   const [showSearchResult, setShowSearch] = useState(false);
@@ -182,4 +182,4 @@ function Page() {
     </div>
   );
 }
-export default Page;
+export default FoodPage;
