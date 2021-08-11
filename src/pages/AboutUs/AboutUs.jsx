@@ -65,10 +65,10 @@ function AboutUs() {
           <h1 className="border-t-4 border-white w-8"></h1>
         </div>
       </div>
-      <div className="m-16 mr-12 ml-12">
+      <div className="m-16 mr-8 ml-8">
         <WhatWeDo />
       </div>
-      <div className="m-16 mr-12 ml-12">
+      <div className="m-16 mx-8">
         <WhyWeDoIt />
       </div>
       <div className="mt-20">
