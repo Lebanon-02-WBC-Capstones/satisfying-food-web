@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import fire from "./fire.svg";
 import time from "./time.svg";
 
-function PopularFoodItemCard(foodData) {
-  const { food } = foodData;
+function PopularFoodItemCard(props) {
+  const { food } = props;
+
   return (
     <div className="flex flex-col items-center shadow-md pt-2 rounded-lg w-32 h-48">
       <img
