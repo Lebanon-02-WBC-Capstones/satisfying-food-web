@@ -21,7 +21,7 @@ function App() {
         <Route path="/aboutus" />
         <Route path="/signin" />
         {menDisp ? <Menu /> : <Navbar />}
-        <Route path="/foodpage" component={FoodPage} />
+        <Route path="/foods" component={FoodPage} />
 
         <Footer />
       </Router>

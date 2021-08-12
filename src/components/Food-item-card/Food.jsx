@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 function Food({ img, title, cal, time, id, categories,ingredients }) {
   const storage = window.localStorage;
-  var fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
+  let fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
   const currentItem = {
     title:title,img:img,cal:cal,time:time,id:id,categories:categories,ingredients:ingredients
   };
