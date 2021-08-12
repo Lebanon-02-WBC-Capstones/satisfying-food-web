@@ -6,6 +6,7 @@ import { StateContext } from "./StateProvider";
 import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Menu/Navbar";
 
+
 function App() {
   const [state] = useContext(StateContext);
   let menDisp = state.menuDisp;
@@ -20,7 +21,7 @@ function App() {
         <Route path="/aboutus" />
         <Route path="/signin" />
         {menDisp ? <Menu /> : <Navbar />}
-        <Footer />
+       <Footer />
       </Router>
     </div>
   );

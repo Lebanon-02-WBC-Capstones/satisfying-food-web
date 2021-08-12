@@ -11,15 +11,16 @@ const SearchBar = (props) => {
   };
 
   return (
+    <div className="h-24 px-8 pt-4 overflow-hidden">
     <form
-      className="flex justify-center m-10  border border-gray-400 text-gray-400 rounded-full"
+      className="flex justify-center   border border-gray-400 text-gray-400 rounded-full bg-white "
       onSubmit={() => onSearch(searchText)}
     >
       <button
         type="submit"
         className="px-4 py-2 text-grey-400 whitespace-no-wrap"
       >
-        <img src={searchIcon} alt="search-Icon" />
+        <img src={searchIcon} alt="search-Icon"  className="bg-white"/>
       </button>
       <input
         name="text"
@@ -30,6 +31,7 @@ const SearchBar = (props) => {
         required
       />
     </form>
+    </div>
   );
 };
 
