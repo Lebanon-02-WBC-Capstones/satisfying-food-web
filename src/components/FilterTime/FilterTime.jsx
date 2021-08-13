@@ -23,7 +23,7 @@ function FilterTime({ time }) {
           src="https://image.flaticon.com/icons/png/128/714/714903.png"
           className="w-8 h-8 static -mt-8 "
         />
-        <span className="p-px text-xs font-semibold"> {time} Min</span>
+        <span className="p-px text-xs font-semibold"> {time}</span>
       </div>
     </div>
   );

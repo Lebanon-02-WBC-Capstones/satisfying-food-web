@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "./App.css";
 import React, { useContext } from "react";
 import Footer from "./components/Footer/Footer";
@@ -6,12 +7,13 @@ import { StateContext } from "./StateProvider";
 import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Menu/Navbar";
 import FoodPage from "../src/pages/FoodItemsPage/FoodPage";
+import Page from "./pages/FilterPage/FilterPage";
 function App() {
   const [state] = useContext(StateContext);
   let menDisp = state.menuDisp;
   return (
     <div>
-      <Router>
+      {/* <Router>
         
         <Route path="/" exact />
         <Route path="/foodlists" />
@@ -19,12 +21,12 @@ function App() {
         <Route path="/categories" />
         <Route path="/favorites" />
         <Route path="/aboutus" />
-        <Route path="/signin" />
-        {menDisp ? <Menu /> : <Navbar />}
-        <Route path="/foods" component={FoodPage} />
-
-        <Footer />
-      </Router>
+        <Route path="/signin" /> */}
+        {/* {menDisp ? <Menu /> : <Navbar />} */}
+        <Page/>
+        {/* <Route path="/foods" component={FoodPage} /> */}
+        {/* <Footer /> */}
+      {/* </Router> */}
     </div>
   );
 }
