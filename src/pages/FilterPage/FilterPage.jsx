@@ -1,6 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-console */
-/* eslint-disable no-unused-vars */
 import React from "react";
 import { useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -115,7 +112,6 @@ let TimeArray = FilteredFoodTime.map((item) => (
 
   const isCatClicked = clickedCategory ? FilteredArray : Foods;
 
-  const isTimeClicked= time ? TimeArray : isCatClicked;
   const WhatToShow = showSearchResult ? food : isCatClicked ;
   return (
     <div className=" bg-yellow-500">
