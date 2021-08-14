@@ -1,9 +1,22 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-function Food({ img, title, cal, time, id }) {
+function Food({ img, title, cal, time, id, categories,ingredients }) {
+  const storage = window.localStorage;
+  let fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
+  const currentItem = {
+    title:title,img:img,cal:cal,time:time,id:id,categories:categories,ingredients:ingredients
+  };
+const removeItem = (array,item)=>{
+  const index = array.findIndex((element) =>JSON.stringify(element)==JSON.stringify(item));
+  if(index!=-1){
+    array.splice(index,1);
+    return array;
+  }
+};
+
+
   let count = 0;
   const [image, setImage] = useState(
     "https://image.flaticon.com/icons/png/128/833/833300.png"
@@ -19,9 +32,9 @@ function Food({ img, title, cal, time, id }) {
       className="bg-white w-1/2 h-56 rounded-lg shadow-2xl m-2"
       id="main-card"
       onClick={handleClick}
-    >
-      <div id="img-container" className="bg-white w-full h-36 rounded-t-lg">
-        <img src={img} className="rounded-t-lg w-full h-full" alt="" />
+    >{categories}
+      <div id="img-container" className="bg-white w-full h-36 rounded-t-lg" >
+        <img src={img} className="rounded-t-lg w-full h-full"  />
       </div>
       <div id="info-container" className="flex bg-white">
         <div id="title" className="flex w-3/4 bg-white">
@@ -34,26 +47,38 @@ function Food({ img, title, cal, time, id }) {
             alt="Heart-icon"
             className="w-3/5 flex justify-center content-center mx-auto pt-2"
             onClick={() => {
-              if (count % 2 == 0)
+              if (count % 2 == 0){
                 setImage(
                   "https://image.flaticon.com/icons/png/128/833/833300.png"
                 );
-              else
+                fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
+
+                removeItem(fav,currentItem);
+                storage.setItem("fav",JSON.stringify(fav));
+
+              }
+              else{
                 setImage(
                   "https://image.flaticon.com/icons/png/128/833/833472.png"
-                );
+                );  
+                fav.push(currentItem);
+                storage.setItem("fav",JSON.stringify(fav));
+              }
               count++;
-            }}
+               fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
+              
+            }
+          }
           />
         </div>
       </div>
       <div
         id="info"
-        className="flex bg-white w-full h-12 justify-center items-center"
+        className="flex bg-white w-full h-12 justify-center items-center rounded-lg"
       >
         <div
           id="fire"
-          className="flex h-full w-1/4 bg-white justify-center items-center pr-3 pt-2"
+          className="flex h-full w-1/4 bg-white justify-center items-center pr-3 pt-2 rounded-lg"
         >
           <img
             src="https://image.flaticon.com/icons/png/128/870/870620.png"
@@ -62,7 +87,7 @@ function Food({ img, title, cal, time, id }) {
         </div>
         <div
           id="cal"
-          className="flex h-full w-1/4 bg-white justify-center items-center pr-3.5 pt-2 text-sm whitespace-nowrap font-medium"
+          className="flex h-full w-1/4 bg-white justify-center items-center pr-3.5 pt-2 text-sm whitespace-nowrap font-medium rounded-lg"
         >
           <p>{cal} Cal</p>
         </div>
@@ -72,12 +97,12 @@ function Food({ img, title, cal, time, id }) {
         >
           <img
             src="https://image.flaticon.com/icons/png/128/2784/2784459.png"
-            className="w-3/5 justify-center items-center pr-1"
+            className="w-3/5 justify-center items-center pr-1 "
           />
         </div>
         <div
           id="time"
-          className="flex h-full w-1/4 bg-white justify-center items-center pr-3 pt-2 text-sm whitespace-nowrap font-medium"
+          className="flex h-full w-1/4 bg-white justify-center items-center pr-3 pt-2 text-sm whitespace-nowrap font-medium rounded-lg"
         >
           <p>{time} Min</p>
         </div>
@@ -91,6 +116,8 @@ Food.defaultProps = {
   cal: "0",
   time: "0",
   id: "0",
+  ingredients:[],
+  category:[]
 };
 Food.prototypes = {
   img: PropTypes.string,
@@ -98,5 +125,7 @@ Food.prototypes = {
   id: PropTypes.string,
   cal: PropTypes.string,
   time: PropTypes.string,
+  ingredients: PropTypes.array,
+  categories: PropTypes.array
 };
 export default Food;

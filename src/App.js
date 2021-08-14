@@ -8,6 +8,7 @@ import Navbar from "./components/Menu/Navbar";
 import FoodPage from "../src/pages/FoodItemsPage/FoodPage";
 import FoodDetails from "./pages/FoodDetailsPage/FoodDetails";
 import AboutUs from "./pages/AboutUs/AboutUs";
+
 function App() {
   const [state] = useContext(StateContext);
   let menDisp = state.menuDisp;
