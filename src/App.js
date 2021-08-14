@@ -7,6 +7,7 @@ import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Menu/Navbar";
 import FoodPage from "../src/pages/FoodItemsPage/FoodPage";
 import AboutUs from "./pages/AboutUs/AboutUs";
+
 function App() {
   const [state] = useContext(StateContext);
   let menDisp = state.menuDisp;

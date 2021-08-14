@@ -33,7 +33,7 @@ const Menu = () => {
           </div>
         </div>
         <div>
-          <Link to={"/foodlists"}>
+          <Link to={"/foods"}>
             <p>Food Lists</p>
           </Link>
         </div>
