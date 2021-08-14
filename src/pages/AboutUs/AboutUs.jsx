@@ -6,6 +6,13 @@ import TeamCardItem from "../../components/TeamCardItem/TeamCardItem";
 import ContactUs from "../../components/ContactUs/ContactUs";
 import { StateContext } from "../.././StateProvider";
 import { useHistory } from "react-router-dom";
+import abed from "../../images/TeamPhotos/AbdallahSafar.jpg";
+import adnan from "../../images/TeamPhotos/AdnanSayed.jpeg";
+import marwa from "../../images/TeamPhotos/MarwaAwwad.jpeg";
+import sukaina from "../../images/TeamPhotos/SukainaCharafEddine.jpeg";
+import nour from "../../images/TeamPhotos/NourSarmout.jpeg";
+import charbel from "../../images/TeamPhotos/CharbelHbayter.jpeg";
+import osama from "../../images/TeamPhotos/OsamaAbdullah.png";
 
 function AboutUs() {
   const [state, dispatch] = useContext(StateContext);
@@ -21,37 +28,37 @@ function AboutUs() {
     {
       name: "Osama Abdullah",
       role: "Leader",
-      imageURL: "https://image.flaticon.com/icons/png/512/2922/2922510.png",
+      imageURL: osama,
     },
     {
       name: "Marwa Awwad",
       role: "Developer",
-      imageURL: "https://image.flaticon.com/icons/png/512/2922/2922561.png",
+      imageURL: marwa,
     },
     {
       name: "Adnan Sayed",
       role: "Developer",
-      imageURL: "https://image.flaticon.com/icons/png/512/2922/2922510.png",
+      imageURL: adnan,
     },
     {
       name: "Charbel Hbayter",
       role: "Developer",
-      imageURL: "https://image.flaticon.com/icons/png/512/2922/2922510.png",
+      imageURL: charbel,
     },
     {
       name: "Nour Sarmout",
       role: "Developer",
-      imageURL: "https://image.flaticon.com/icons/png/512/2922/2922561.png",
+      imageURL: nour,
     },
     {
       name: "Abdallah Safar",
       role: "Developer",
-      imageURL: "https://image.flaticon.com/icons/png/512/2922/2922510.png",
+      imageURL: abed,
     },
     {
       name: "Sukaina Charaf Eddine",
       role: "Developer",
-      imageURL: "https://image.flaticon.com/icons/png/512/2922/2922561.png",
+      imageURL: sukaina,
     },
   ];
 

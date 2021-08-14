@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 function TeamCardItem(memberprops) {
   const { person } = memberprops;
   return (
@@ -15,8 +15,8 @@ function TeamCardItem(memberprops) {
   );
 }
 
-TeamCardItem.PropTypes = {
-  TeamCardItem: PropTypes.object,
+TeamCardItem.propTypes = {
+  TeamCardItem: propTypes.object,
 };
 
 export default TeamCardItem;

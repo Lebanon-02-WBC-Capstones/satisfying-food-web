@@ -10,8 +10,9 @@ function WhatWeDo() {
       </p>
       <div className="w-full ml-3">
         <p className="text-xl mt-3">
-          Our goal is to make cooking easier. With Satisfying Food, you can
-          learn, share your recipes, and enjoy all kind of food.
+          In order to teach you how to be satisfied with your foods, we have
+          chosen the best, the easiest, and most appropriate way to cook the
+          best dishes for you.
         </p>
       </div>
     </div>
