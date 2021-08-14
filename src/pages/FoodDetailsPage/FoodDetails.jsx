@@ -13,7 +13,6 @@ function FoodDetails() {
   const history = useHistory();
 
   const { id } = useParams();
-  console.log(id);
   const currentFood = foodData.FoodArray.find(
     (currentFood) => currentFood.id === id
   );
@@ -117,7 +116,14 @@ function FoodDetails() {
         <h1 className="text-2xl font-semibold ml-4 mt-3">Ingredients</h1>
         <div className="m-4 ml-2 mb-8 flex flex-wrap">
           {currentFood.ingredients.map((ing) => (
-            <Category key={ing} image={portion} title={ing} />
+            <Category
+              key={ing}
+              image={
+                foodData.ingredientsArray.find((item) => item.title === ing)
+                  .image
+              }
+              title={ing}
+            />
           ))}
         </div>
       </div>
