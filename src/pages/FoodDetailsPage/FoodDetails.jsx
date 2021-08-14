@@ -144,9 +144,9 @@ function FoodDetails() {
           </p>
         </div>
       </div>
-      <div>
+      <div className="mb-6">
         <h1 className="text-2xl font-semibold ml-4 mt-3">Similar Recipes</h1>
-        <div className="w-full flex overflow-auto pb-4 ml-1">
+        <div className="w-full flex overflow-auto pb-4 ml-4 mt-4">
           {similarRecipes.map((rec) => {
             if (rec.title !== currentFood.title) {
               return (
