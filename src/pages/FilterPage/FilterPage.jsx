@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -8,6 +9,7 @@ import Food from "../../components/Food-item-card/Food";
 import Filter from "../../components/FilterTime/FilterTime";
 import * as foodData from "../../foodData";
 function FoodPage() {
+  const [showFilteredTime,setShowFilteredTime] = useState(false);
   const [clickedCategory, setClickedCategory] = useState("");
   const [food, setFood] = useState([]);
   const [showSearchResult, setShowSearch] = useState(false);
@@ -20,6 +22,7 @@ function FoodPage() {
       getCat={(clickedCategory) => {
         setClickedCategory(clickedCategory);
         setShowSearch(false);
+        setShowFilteredTime(false);
       }}
     />
   ));
@@ -68,13 +71,52 @@ function FoodPage() {
     ));
     setFood(FilteredArray);
     setShowSearch(true);
+    setShowFilteredTime(false);
   };
 
 
 let time = filterTime.split(" ")[0];
 
+
+let FilteredFoodTime=[];
+if(time=="<1")
+{ FilteredFoodTime = foodData.FoodArray.filter(
+  (item) => item.time <60
+);}
+if(time==">1")
+{ FilteredFoodTime = foodData.FoodArray.filter(
+  (item) => item.time >60
+);}
+
+if(time!="<1" && time !=">1")
+{ FilteredFoodTime = foodData.FoodArray.filter(
+  (item) => item.time ==time
+);}
+
+
+
+
+
+
+let TimeArray = FilteredFoodTime.map((item) => (
+  <Food
+    key={item.title}
+    id={item.id}
+    img={item.img}
+    title={item.title}
+    time={item.time}
+    cal={item.cal}
+  />
+));
+
+
+
+
+
   const isCatClicked = clickedCategory ? FilteredArray : Foods;
-  console.log(time);
+
+  const isTimeClicked= time ? TimeArray : isCatClicked;
+  const WhatToShow = showSearchResult ? food : isCatClicked ;
   return (
     <div className=" bg-yellow-500">
       <div className="w-full h-11 bg-yellow-500 "></div>
@@ -89,7 +131,7 @@ let time = filterTime.split(" ")[0];
         <span className="text-gray-500">Find food that suits your taste here </span>
         <h2 className="text-yellow-500 font-bold text-2xl pb-2 mt-4">Duration</h2>
         <div className="w-full flex justify-around -ml-4 ">
-        <Filter time="15 Min" getTime={setFilterTime}/> <Filter time="30 Min"  getTime={setFilterTime}/><Filter time="<1 hr"  getTime={setFilterTime}/> <Filter time=">1 hr"  getTime={setFilterTime}/>
+        <Filter time="15 Min" getTime={setFilterTime} setShow={setShowFilteredTime}/> <Filter time="30 Min"  getTime={setFilterTime} setShow={setShowFilteredTime} /><Filter time="<1 hr"  getTime={setFilterTime} setShow={setShowFilteredTime}/> <Filter time=">1 hr"  getTime={setFilterTime} setShow={setShowFilteredTime}/>
          </div>
         <div>
         <h2 className="text-yellow-500 font-bold text-2xl pb-2 pt-2">Categories</h2></div></div>
@@ -114,9 +156,8 @@ let time = filterTime.split(" ")[0];
       </div>
       <div id="align-food-div-center" className="flex align-center">
         <div className="w-full flex flex-wrap content-around justify-center mb-8">
-          {showSearchResult ? food : isCatClicked}
+        {showFilteredTime ? TimeArray : WhatToShow}
         </div></div>
-
       </div>
     </div>
   );

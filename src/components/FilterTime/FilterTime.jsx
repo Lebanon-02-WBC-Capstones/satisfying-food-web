@@ -1,10 +1,11 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useState } from "react";
 import PropTypes from "prop-types";
-function FilterTime({ time,getTime }) {
+function FilterTime({ time,getTime,setShow }) {
   let count = 0;
   let notClicked =
     "shadow-lg rounded-lg bg-gray-100 flex flex-col text-sm h-8 w-12 justify-center items-center border-solid border border-yellow-600 border-opacity-40 text-yellow-600";
@@ -22,6 +23,7 @@ function FilterTime({ time,getTime }) {
     >
       <div className={isClickedStyle} onClick={()=>{
         getTime(time);
+        setShow(true);
       }}>
         <img
           src="https://image.flaticon.com/icons/png/128/714/714903.png"
