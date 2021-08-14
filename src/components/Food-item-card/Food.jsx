@@ -16,7 +16,7 @@ function Food({ img, title, cal, time, id }) {
   }
   return (
     <div
-      className="bg-white w-1/2 h-56 rounded-lg shadow-2xl m-px"
+      className="bg-white w-1/2 h-56 rounded-lg shadow-2xl m-2"
       id="main-card"
       onClick={handleClick}
     >
