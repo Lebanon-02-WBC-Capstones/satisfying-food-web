@@ -29,8 +29,8 @@ const removeItem = (array,item)=>{
   }
   return (
     <div
-      className="bg-white w-1/2 h-56 rounded-lg shadow-2xl m-2"
-      id="main-card"
+      className="bg-white h-56 rounded-lg shadow-2xl m-2"
+      style={{width: "45vw"}}
       onClick={handleClick}
     >{categories}
       <div id="img-container" className="bg-white w-full h-36 rounded-t-lg" >
