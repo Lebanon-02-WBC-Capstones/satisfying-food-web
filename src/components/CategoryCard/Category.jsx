@@ -13,6 +13,7 @@ function Category({ image, title, cat, getCat }) {
         if (count % 2 != 0) setCatStyle(clicked);
         else setCatStyle(notClicked);
         count++;
+        getCat(title);
       }}>
       <img
         src={image}
