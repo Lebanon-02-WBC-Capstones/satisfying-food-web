@@ -38,7 +38,7 @@ function FilterTime({ time,getTime,setShow }) {
 FilterTime.defaultProps = {
   time: "0",
 };
-FilterTime.PropTypes = {
+FilterTime.propTypes = {
   time: PropTypes.string,
 };
 export default FilterTime;

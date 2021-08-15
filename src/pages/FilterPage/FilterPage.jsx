@@ -116,7 +116,7 @@ let TimeArray = FilteredFoodTime.map((item) => (
   return (
     <div className=" bg-yellow-500">
       <div className="w-full h-11 bg-yellow-500 "></div>
-        <div className="wp-full h-full bg-yellow-500 flex justify-center pb-6 -m-px   " >
+        <div className="w-full h-full bg-yellow-500 pb-6 -m-px" >
           
         <SearchBar onSearch={handleSearch} /></div>
         <div className="w-full bg-white h-full shadow-2xl -mt-11 rounded-t-3xl ">
