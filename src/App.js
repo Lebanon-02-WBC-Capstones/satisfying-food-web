@@ -6,6 +6,7 @@ import { StateContext } from "./StateProvider";
 import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Menu/Navbar";
 import FoodPage from "../src/pages/FoodItemsPage/FoodPage";
+import FoodDetails from "./pages/FoodDetailsPage/FoodDetails";
 import AboutUs from "./pages/AboutUs/AboutUs";
 
 function App() {
@@ -16,14 +17,17 @@ function App() {
       <Router>
         <Switch>
           <Route path="/aboutus" component={AboutUs} />
+          <Route path="/food/:id" component={FoodDetails} />
+          {menDisp && <Menu />}
           <div>
             <Route path="/" exact />
             <Route path="/foodlists" />
             <Route path="/filter" />
             <Route path="/categories" />
             <Route path="/favorites" />
+            <Route path="/aboutus" />
             <Route path="/signin" />
-            {menDisp ? <Menu /> : <Navbar />}
+            {!menDisp && <Navbar />}
             <Route path="/foods" component={FoodPage} />
           </div>
         </Switch>
