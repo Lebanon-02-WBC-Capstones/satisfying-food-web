@@ -1,25 +1,21 @@
 import React from "react";
-import SearchBar from "../components/SearchBar/SearchBar";
-import Addrecipe from "../components/Addrecipe/Addrecipe";
-import Footer from "../components/Footer/Footer";
-import SubscribeToNewsLetter from "../components/SubscribeToNewsLetter/SubscribeToNewsLetter";
-import PopularFoodItemCard from "../components/PopularFoodItemCard/PopularFoodItemCard";
-import Header from "../components/HomePageHeader/HomePageHeader";
-
-import strawberryBowl from "../images/strawberry-bowl.svg";
-import roastedBowl from "../images/roasted-bowl.svg";
-import penne from "../images/penne.svg";
-
-import veggie from "../images/categories/veggie.svg";
-import fruits from "../images/categories/fruits.svg";
-import meat from "../images/categories/meat.svg";
-import fish from "../images/categories/fish.svg";
-import breakfast from "../images/categories/breakfast.svg";
-import lunch from "../images/categories/lunch.svg";
-import dinner from "../images/categories/dinner.svg";
-import dessert from "../images/categories/dessert.svg";
-
-import Category from "../components/CategoryCard/Category";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import Addrecipe from "../../components/Addrecipe/Addrecipe";
+import SubscribeToNewsLetter from "../../components/SubscribeToNewsLetter/SubscribeToNewsLetter";
+import PopularFoodItemCard from "../../components/PopularFoodItemCard/PopularFoodItemCard";
+import Header from "../../components/HomePageHeader/HomePageHeader";
+import strawberryBowl from "../../images/strawberry-bowl.svg";
+import roastedBowl from "../../images/roasted-bowl.svg";
+import penne from "../../images/penne.svg";
+import veggie from "../../images/categories/veggie.svg";
+import fruits from "../../images/categories/fruits.svg";
+import meat from "../../images/categories/meat.svg";
+import fish from "../../images/categories/fish.svg";
+import breakfast from "../../images/categories/breakfast.svg";
+import lunch from "../../images/categories/lunch.svg";
+import dinner from "../../images/categories/dinner.svg";
+import dessert from "../../images/categories/dessert.svg";
+import Category from "../../components/CategoryCard/Category";
 
 const HomePage = () => {
   const categories = [
@@ -75,7 +71,7 @@ const HomePage = () => {
       <Header />
       <SearchBar onSearch={handleSearch} />
       <p className="font-bold text-lg ml-4">Popular</p>
-      <div className="flex flex-row justify-center items-center ml-4 my-4">
+      <div className="flex flex-row ml-4 my-4 overflow-x-scroll overflow-hidden">
         {popularFoodItems}
       </div>
       <p className="font-bold text-lg ml-4">Categories</p>
@@ -85,7 +81,6 @@ const HomePage = () => {
       <p className="font-bold text-lg ml-4 my-4">Add Recipe</p>
       <Addrecipe />
       <SubscribeToNewsLetter />
-      <Footer />
     </>
   );
 };
