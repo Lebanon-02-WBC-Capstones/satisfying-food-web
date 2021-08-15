@@ -33,7 +33,7 @@ const Menu = () => {
           </div>
         </div>
         <div>
-          <Link to={"/foodlists"} onClick={change}>
+          <Link to={"/foods"} onClick={change}>
             <p>Food Lists</p>
           </Link>
         </div>
