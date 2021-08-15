@@ -21,7 +21,6 @@ function App() {
           {menDisp && <Menu />}
           <div>
             <Route path="/" exact />
-            <Route path="/foodlists" />
             <Route path="/filter" />
             <Route path="/categories" />
             <Route path="/favorites" />

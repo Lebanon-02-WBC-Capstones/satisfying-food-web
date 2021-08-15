@@ -26,7 +26,7 @@ const Menu = () => {
           <Link className={"pt-2"} to={"/"} onClick={change}>
             <p>Home</p>
           </Link>
-          <div className={"pr-5"}>
+          <div className={"pr-5"} onClick={change}>
             <Link to={"/signin"}>
               <img src={Ur} alt="User-icon" />
             </Link>
@@ -43,7 +43,7 @@ const Menu = () => {
           </Link>
         </div>
         <div>
-          <Link to={"/categories"} onClick={change} >
+          <Link to={"/categories"} onClick={change}>
             <p>Categories </p>
           </Link>
         </div>
