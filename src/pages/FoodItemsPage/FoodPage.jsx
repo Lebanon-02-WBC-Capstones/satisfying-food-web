@@ -35,7 +35,7 @@ function FoodPage() {
   ));
 
   const Filtered = foodData.FoodArray.filter(
-    (item) => item.category.toLowerCase() == clickedCategory.toLowerCase()
+    (item) => item.category == clickedCategory
   );
 
   let FilteredArray = Filtered.map((item) => (
@@ -77,12 +77,12 @@ function FoodPage() {
       </div>      
         <SearchBar onSearch={handleSearch} />
       <div
-        className="w-full h-20 flex overflow-x-scroll overflow-hidden pb-4"
+        className="w-full h-20 flex overflow-x-scroll overflow-hidden pb-4 ml-2"
       >
         {Categories}
       </div>
       <div id="align-food-div-center" className="flex align-center">
-        <div className="w-full flex flex-wrap content-around justify-center mb-8">
+        <div className="w-full flex flex-wrap content-around justify-around mb-4 mt-4">
           {showSearchResult ? food : isCatClicked}
         </div>
       </div>
