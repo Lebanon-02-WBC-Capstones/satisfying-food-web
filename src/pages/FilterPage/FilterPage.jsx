@@ -114,7 +114,7 @@ let TimeArray = FilteredFoodTime.map((item) => (
 
   const WhatToShow = showSearchResult ? food : isCatClicked ;
   return (
-    <div className=" bg-yellow-500">
+    <div className="w-full bg-yellow-500">
       <div className="w-full h-11 bg-yellow-500 "></div>
         <div className="w-full h-full bg-yellow-500 pb-6 -m-px" >
           

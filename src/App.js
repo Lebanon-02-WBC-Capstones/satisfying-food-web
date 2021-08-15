@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import "./App.css";
 import React, { useContext } from "react";
 import Footer from "./components/Footer/Footer";
@@ -7,9 +6,9 @@ import { StateContext } from "./StateProvider";
 import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Menu/Navbar";
 import FoodPage from "../src/pages/FoodItemsPage/FoodPage";
-// import FoodDetails from "./pages/FoodDetailsPage/FoodDetails";
-// import AboutUs from "./pages/AboutUs/AboutUs";
-import FilterPage from "../src/pages/FilterPage/FilterPage";
+import FoodDetails from "./pages/FoodDetailsPage/FoodDetails";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import FilterPage from "./pages/FilterPage/FilterPage";
 function App() {
   const [state] = useContext(StateContext);
   let menDisp = state.menuDisp;
@@ -23,13 +22,14 @@ function App() {
           <div>
             <Route path="/" exact />
             <Route path="/foodlists" />
+            <Route path="/filter" />
             <Route path="/categories" />
             <Route path="/favorites" />
             <Route path="/aboutus" />
             <Route path="/signin" />
             {!menDisp && <Navbar />}
             <Route path="/foods" component={FoodPage} />
-            <Route path="/filter" component={FilterPage}/>
+            <Route path="/filter" component={FilterPage} />
           </div>
         </Switch>
         <Footer />
