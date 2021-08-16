@@ -1,11 +1,11 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-function Foodd({ img, title, cal, time, id, categories, ingredients }) {
+
+function Food({ img, title, cal, time, id, categories, ingredients }) {
   const storage = window.localStorage;
-  var fav = JSON.parse(storage.getItem("fav"))
+  let fav = JSON.parse(storage.getItem("fav"))
     ? JSON.parse(storage.getItem("fav"))
     : [];
   const currentItem = {
@@ -26,6 +26,7 @@ function Foodd({ img, title, cal, time, id, categories, ingredients }) {
       return array;
     }
   };
+
   let count = 0;
   const [image, setImage] = useState(
     "https://image.flaticon.com/icons/png/128/833/833300.png"
@@ -38,12 +39,14 @@ function Foodd({ img, title, cal, time, id, categories, ingredients }) {
   }
   return (
     <div
-      className="bg-white w-40 h-56 rounded-lg shadow-2xl mt-6 mr-3 ml-3"
-      id="main-card"
+      className="bg-white h-56 rounded-lg shadow-2xl m-2"
+      style={{ width: "45vw" }}
+
       onClick={handleClick}
     >
+      {categories}
       <div id="img-container" className="bg-white w-full h-36 rounded-t-lg">
-        <img src={img} className="rounded-t-lg w-full h-full" alt="" />
+        <img src={img} className="rounded-t-lg w-full h-full object-cover" />
       </div>
       <div id="info-container" className="flex bg-white  ">
         <div id="title" className="flex w-3/4 bg-white">
@@ -60,7 +63,6 @@ function Foodd({ img, title, cal, time, id, categories, ingredients }) {
                 setImage(
                   "https://image.flaticon.com/icons/png/128/833/833300.png"
                 );
-
                 fav = JSON.parse(storage.getItem("fav"))
                   ? JSON.parse(storage.getItem("fav"))
                   : [];
@@ -78,7 +80,6 @@ function Foodd({ img, title, cal, time, id, categories, ingredients }) {
               fav = JSON.parse(storage.getItem("fav"))
                 ? JSON.parse(storage.getItem("fav"))
                 : [];
-              //console.log(fav);
             }}
           />
         </div>
@@ -89,7 +90,7 @@ function Foodd({ img, title, cal, time, id, categories, ingredients }) {
       >
         <div
           id="fire"
-          className="flex h-full w-1/4 bg-white justify-center items-center rounded-lg pr-3 pt-2"
+          className="flex h-full w-1/4 bg-white justify-center items-center pr-3 pt-2 rounded-lg"
         >
           <img
             src="https://image.flaticon.com/icons/png/128/870/870620.png"
@@ -98,7 +99,7 @@ function Foodd({ img, title, cal, time, id, categories, ingredients }) {
         </div>
         <div
           id="cal"
-          className="rounded-lg flex h-full w-1/4 bg-white justify-center items-center pr-3.5 pt-2 text-sm whitespace-nowrap font-medium"
+          className="flex h-full w-1/4 bg-white justify-center items-center pr-3.5 pt-2 text-sm whitespace-nowrap font-medium rounded-lg"
         >
           <p>{cal} Cal</p>
         </div>
@@ -108,12 +109,12 @@ function Foodd({ img, title, cal, time, id, categories, ingredients }) {
         >
           <img
             src="https://image.flaticon.com/icons/png/128/2784/2784459.png"
-            className="rounded-lg w-3/5 justify-center items-center pr-1"
+            className="w-3/5 justify-center items-center pr-1 "
           />
         </div>
         <div
           id="time"
-          className="rounded-lg flex h-full w-1/4 bg-white justify-center items-center pr-3 pt-2 text-sm whitespace-nowrap font-medium"
+          className="flex h-full w-1/4 bg-white justify-center items-center pr-3 pt-2 text-sm whitespace-nowrap font-medium rounded-lg"
         >
           <p>{time} Min</p>
         </div>
@@ -127,6 +128,8 @@ Foodd.defaultProps = {
   cal: "0",
   time: "0",
   id: "0",
+  ingredients: [],
+  category: [],
 };
 Foodd.prototypes = {
   img: PropTypes.string,
@@ -134,5 +137,7 @@ Foodd.prototypes = {
   id: PropTypes.string,
   cal: PropTypes.string,
   time: PropTypes.string,
+  ingredients: PropTypes.array,
+  categories: PropTypes.array,
 };
 export default Foodd;

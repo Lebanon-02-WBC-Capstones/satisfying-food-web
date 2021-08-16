@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 function TeamCardItem(memberprops) {
   const { person } = memberprops;
   return (
@@ -7,16 +7,16 @@ function TeamCardItem(memberprops) {
       <img
         src={person.imageURL}
         alt={person.name}
-        className="rounded-full mb-1 w-20 h-20 object-cover"
+        className="rounded-full mb-1 w-20 h-20"
       />
-      <p className="text-sm font-bold text-center">{person.name}</p>
+      <p className="text-sm font-medium text-center">{person.name}</p>
       <p className="text-xs text-center">{person.role}</p>
     </div>
   );
 }
 
-TeamCardItem.PropTypes = {
-  TeamCardItem: PropTypes.object,
+TeamCardItem.propTypes = {
+  TeamCardItem: propTypes.object,
 };
 
 export default TeamCardItem;

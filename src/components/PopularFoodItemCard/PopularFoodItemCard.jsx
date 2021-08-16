@@ -3,14 +3,15 @@ import PropTypes from "prop-types";
 import fire from "./fire.svg";
 import time from "./time.svg";
 
-function PopularFoodItemCard(foodData) {
-  const { food } = foodData;
+function PopularFoodItemCard(props) {
+  const { food } = props;
+
   return (
-    <div className="flex flex-col items-center shadow-md pt-2 rounded-lg w-32 h-48">
+    <div className="flex flex-col items-center shadow-md rounded-lg w-32 h-48 flex-none m-2">
       <img
         src={food.image}
         alt={food.name}
-        className="rounded-full shadow-md mb-1 w-28 h-28"
+        className="rounded-full shadow-md mb-1 w-28 h-28 object-cover"
       />
       <p className="text-xs font-bold mb-1">{food.title}</p>
       <div className="flex justify-between">
