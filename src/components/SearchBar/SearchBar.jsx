@@ -12,7 +12,7 @@ const SearchBar = (props) => {
 
   return (
     <form
-      className="flex justify-center my-10 mx-6 border border-gray-400 text-gray-400 rounded-full"
+      className="flex justify-center bg-white mx-6 border border-gray-400 text-gray-400 rounded-full"
       onSubmit={(event) => {
         event.preventDefault();
         onSearch(searchText);

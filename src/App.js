@@ -9,8 +9,7 @@ import FoodPage from "../src/pages/FoodItemsPage/FoodPage";
 import HomePage from "./pages/HomePage/HomePage";
 import FoodDetails from "./pages/FoodDetailsPage/FoodDetails";
 import AboutUs from "./pages/AboutUs/AboutUs";
-
-
+import FilterPage from "./pages/FilterPage/FilterPage";
 function App() {
   const [state] = useContext(StateContext);
   let menDisp = state.menuDisp;
@@ -30,6 +29,7 @@ function App() {
             <Route path="/signin" />
             {!menDisp && <Navbar />}
             <Route path="/foods" component={FoodPage} />
+            <Route path="/filter" component={FilterPage} />
           </div>
         </Switch>
         <Footer />
