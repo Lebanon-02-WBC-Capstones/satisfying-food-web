@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import FoodDetails from "./pages/FoodDetailsPage/FoodDetails";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import FilterPage from "./pages/FilterPage/FilterPage";
+import FavPage from "./pages/FavPage/Fav";
 function App() {
   const [state] = useContext(StateContext);
   let menDisp = state.menuDisp;
@@ -25,7 +26,7 @@ function App() {
             <Route path="/" exact component={HomePage} />
             <Route path="/filter" />
             <Route path="/categories" />
-            <Route path="/favorites" />
+            <Route path="/favorites" component={FavPage}/>
             <Route path="/aboutus" />
             <Route path="/signin" />
             <Route path="/foods" component={FoodPage} />
