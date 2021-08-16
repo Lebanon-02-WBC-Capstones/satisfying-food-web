@@ -5,7 +5,7 @@
 import React from "react";
 import { useState } from "react";
 import PropTypes from "prop-types";
-function FilterTime({ time,getTime,setShow }) {
+function FilterTime({ time, getTime, setShow }) {
   let count = 0;
   let notClicked =
     "shadow-lg rounded-lg bg-gray-100 flex flex-col text-sm h-8 w-12 justify-center items-center border-solid border border-yellow-600 border-opacity-40 text-yellow-600";
@@ -21,10 +21,13 @@ function FilterTime({ time,getTime,setShow }) {
         count++;
       }}
     >
-      <div className={isClickedStyle} onClick={()=>{
-        getTime(time);
-        setShow(true);
-      }}>
+      <div
+        className={isClickedStyle}
+        onClick={() => {
+          getTime(time);
+          setShow(true);
+        }}
+      >
         <img
           src="https://image.flaticon.com/icons/png/128/714/714903.png"
           className="w-8 h-8 static -mt-8 "

@@ -70,15 +70,15 @@ const HomePage = () => {
     <>
       <Header />
       <SearchBar onSearch={handleSearch} />
-      <p className="font-bold text-lg ml-4">Popular</p>
-      <div className="flex flex-row ml-4 my-4 overflow-x-scroll overflow-hidden">
+      <p className="font-bold text-lg ml-6 my-4">Popular</p>
+      <div className="flex flex-row ml-4 my-4 overflow-x-scroll overflow-y-hidden">
         {popularFoodItems}
       </div>
-      <p className="font-bold text-lg ml-4">Categories</p>
-      <div className="flex flex-row flex-wrap justify-center items-center ml-4 my-4">
+      <p className="font-bold text-lg ml-6">Categories</p>
+      <div className="flex flex-row flex-wrap justify-center items-center my-4">
         {categoriesItems}
       </div>
-      <p className="font-bold text-lg ml-4 my-4">Add Recipe</p>
+      <p className="font-bold text-lg ml-6 my-4">Add Recipe</p>
       <Addrecipe />
       <SubscribeToNewsLetter />
     </>

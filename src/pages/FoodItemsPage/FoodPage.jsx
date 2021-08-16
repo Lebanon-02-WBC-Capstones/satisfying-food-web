@@ -72,11 +72,11 @@ function FoodPage() {
   return (
     <div>
       <div className="w-full h-11"></div>
-      <div className="w-full h-9  flex align-center justify-center text-yellow-500 text-3xl  font-semibold flex-nowarp">
+      <div className="w-full h-9  flex align-center justify-center text-yellow-500 text-3xl  font-semibold flex-nowarp mb-8">
         <p>Let&apos;s Eat Quality Food</p>
       </div>
       <SearchBar onSearch={handleSearch} />
-      <div className="w-full h-20 flex overflow-x-scroll overflow-hidden pb-4 ml-2">
+      <div className="w-full h-20 flex flex-row overflow-x-scroll overflow-hidden pb-4 ml-2 my-4">
         {Categories}
       </div>
       <div id="align-food-div-center" className="flex align-center">

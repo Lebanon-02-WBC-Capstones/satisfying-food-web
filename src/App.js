@@ -21,13 +21,13 @@ function App() {
           <Route path="/food/:id" component={FoodDetails} />
           {menDisp && <Menu />}
           <div>
+            {!menDisp && <Navbar />}
             <Route path="/" exact component={HomePage} />
             <Route path="/filter" />
             <Route path="/categories" />
             <Route path="/favorites" />
             <Route path="/aboutus" />
             <Route path="/signin" />
-            {!menDisp && <Navbar />}
             <Route path="/foods" component={FoodPage} />
             <Route path="/filter" component={FilterPage} />
           </div>

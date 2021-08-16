@@ -1,25 +1,27 @@
-/* eslint-disable no-empty */
+/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
-import {useState} from "react";
+import { useState } from "react";
 function Category({ image, title, cat, getCat }) {
-  
-  let count=0;
-  let notClicked= "rounded-lg shadow-2xl w-24 h-full text-yellow-500 bg-gray-100 py-1 m-2 hover:shadow-xl transition-all";
-  let clicked="rounded-lg shadow-2xl w-24 text-white h-full bg-yellow-500 py-1 m-2 hover:shadow-xl transition-all ";
-  const [catStyle,setCatStyle]= useState(notClicked);
+  let count = 0;
+  let notClicked =
+    "rounded-lg shadow-md w-24 h-full text-yellow-500 bg-gray-100 py-1 m-2 hover:shadow-xl transition-all";
+  let clicked =
+    "rounded-lg shadow-md w-24 text-white h-full bg-yellow-500 py-1 m-2 hover:shadow-xl transition-all";
+  const [catStyle, setCatStyle] = useState(notClicked);
+
   return (
     <div
-      className={catStyle} onClick={() => {
+      className="rounded-lg shadow-md w-24 h-full bg-gray-100 text-yellow-500 py-1 m-2 hover:shadow-lg transition-all flex-none flex justify-center items-center flex-col content-around"
+      onClick={() => {
         if (count % 2 != 0) setCatStyle(clicked);
         else setCatStyle(notClicked);
-        count++;        
-          try{
-        getCat(title);}
-        catch{
-         
-        }
-      }}>
+        count++;
+        try {
+          getCat(title);
+        } catch {}
+      }}
+    >
       <img
         src={image}
         alt="category-icon"

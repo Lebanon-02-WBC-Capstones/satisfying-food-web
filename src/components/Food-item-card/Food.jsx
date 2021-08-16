@@ -44,7 +44,7 @@ function Food({ img, title, cal, time, id, categories, ingredients }) {
     >
       {categories}
       <div id="img-container" className="bg-white w-full h-36 rounded-t-lg">
-        <img src={img} className="rounded-t-lg w-full h-full" />
+        <img src={img} className="rounded-t-lg w-full h-full object-cover" />
       </div>
       <div id="info-container" className="flex bg-white">
         <div id="title" className="flex w-3/4 bg-white">

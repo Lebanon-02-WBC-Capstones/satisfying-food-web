@@ -11,7 +11,7 @@ function PopularFoodItemCard(props) {
       <img
         src={food.image}
         alt={food.name}
-        className="rounded-full shadow-md mb-1 w-28 h-28"
+        className="rounded-full shadow-md mb-1 w-28 h-28 object-cover"
       />
       <p className="text-xs font-bold mb-1">{food.title}</p>
       <div className="flex justify-between">

@@ -1,5 +1,6 @@
 import React from "react";
 import headerRecipe from "../../images/headerRecipe.svg";
+
 export default function Header() {
   return (
     <div className="flex justify-center m-10 overflow-hidden">
@@ -14,7 +15,7 @@ export default function Header() {
           <div className="mt-4">
             <a
               className="font-medium text-xl text-red-300  upp hover:underline"
-              href=" "
+              href="/foods"
               target="_self"
             >
               Let`s eat
