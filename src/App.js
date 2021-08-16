@@ -6,6 +6,7 @@ import { StateContext } from "./StateProvider";
 import Menu from "./components/Menu/Menu";
 import Navbar from "./components/Menu/Navbar";
 import FoodPage from "../src/pages/FoodItemsPage/FoodPage";
+import HomePage from "./pages/HomePage/HomePage";
 import FoodDetails from "./pages/FoodDetailsPage/FoodDetails";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import FilterPage from "./pages/FilterPage/FilterPage";
@@ -20,8 +21,7 @@ function App() {
           <Route path="/food/:id" component={FoodDetails} />
           {menDisp && <Menu />}
           <div>
-            <Route path="/" exact />
-            <Route path="/foodlists" />
+            <Route path="/" exact component={HomePage} />
             <Route path="/filter" />
             <Route path="/categories" />
             <Route path="/favorites" />
