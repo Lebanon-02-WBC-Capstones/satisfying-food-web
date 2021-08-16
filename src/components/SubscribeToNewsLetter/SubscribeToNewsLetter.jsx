@@ -7,7 +7,7 @@ const handleSubmit = (event) => {
 
 const SubscribeToNewsLetter = () => {
   return (
-    <div className="flex flex-col h-screen justify-center items-center">
+    <div className="flex flex-col justify-center items-center my-10">
       <span className="h-5 font-bold font-body text-center text-red-500 pb-10">
         Subscribe to get our newest recipes
       </span>
@@ -17,7 +17,7 @@ const SubscribeToNewsLetter = () => {
       >
         <input
           name="email"
-          className="px-4 py-2 w-full rounded-l border-opacity-0"
+          className="px-4 py-2 w-full rounded-l focus:outline-none"
           type="email"
           placeholder="Enter Email adress"
           required
