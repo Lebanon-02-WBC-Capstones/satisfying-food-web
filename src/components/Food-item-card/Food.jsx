@@ -2,20 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-function Food({ img, title, cal, time, id, categories,ingredients }) {
+function Food({ img, title, cal, time, id, categories, ingredients }) {
   const storage = window.localStorage;
-  let fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
+  let fav = JSON.parse(storage.getItem("fav"))
+    ? JSON.parse(storage.getItem("fav"))
+    : [];
   const currentItem = {
-    title:title,img:img,cal:cal,time:time,id:id,categories:categories,ingredients:ingredients
+    title: title,
+    img: img,
+    cal: cal,
+    time: time,
+    id: id,
+    categories: categories,
+    ingredients: ingredients,
   };
-const removeItem = (array,item)=>{
-  const index = array.findIndex((element) =>JSON.stringify(element)==JSON.stringify(item));
-  if(index!=-1){
-    array.splice(index,1);
-    return array;
-  }
-};
-
+  const removeItem = (array, item) => {
+    const index = array.findIndex(
+      (element) => JSON.stringify(element) == JSON.stringify(item)
+    );
+    if (index != -1) {
+      array.splice(index, 1);
+      return array;
+    }
+  };
 
   let count = 0;
   const [image, setImage] = useState(
@@ -29,12 +38,13 @@ const removeItem = (array,item)=>{
   }
   return (
     <div
-      className=" w-40 h-56 rounded-lg shadow-2xl mt-6 mr-3 ml-3"
-      id="main-card"
+      className="bg-white h-56 rounded-lg shadow-2xl m-2"
+      style={{ width: "45vw" }}
       onClick={handleClick}
-    >{categories}
-      <div id="img-container" className="bg-white w-full h-36 rounded-t-lg" >
-        <img src={img} className="rounded-t-lg w-full h-full"  />
+    >
+      {categories}
+      <div id="img-container" className="bg-white w-full h-36 rounded-t-lg">
+        <img src={img} className="rounded-t-lg w-full h-full" />
       </div>
       <div id="info-container" className="flex bg-white">
         <div id="title" className="flex w-3/4 bg-white">
@@ -47,28 +57,28 @@ const removeItem = (array,item)=>{
             alt="Heart-icon"
             className="w-3/5 flex justify-center content-center mx-auto pt-2"
             onClick={() => {
-              if (count % 2 == 0){
+              if (count % 2 == 0) {
                 setImage(
                   "https://image.flaticon.com/icons/png/128/833/833300.png"
                 );
-                fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
+                fav = JSON.parse(storage.getItem("fav"))
+                  ? JSON.parse(storage.getItem("fav"))
+                  : [];
 
-                removeItem(fav,currentItem);
-                storage.setItem("fav",JSON.stringify(fav));
-
-              }
-              else{
+                removeItem(fav, currentItem);
+                storage.setItem("fav", JSON.stringify(fav));
+              } else {
                 setImage(
                   "https://image.flaticon.com/icons/png/128/833/833472.png"
-                );  
+                );
                 fav.push(currentItem);
-                storage.setItem("fav",JSON.stringify(fav));
+                storage.setItem("fav", JSON.stringify(fav));
               }
               count++;
-               fav = JSON.parse(storage.getItem("fav")) ? JSON.parse(storage.getItem("fav")) : []; 
-              
-            }
-          }
+              fav = JSON.parse(storage.getItem("fav"))
+                ? JSON.parse(storage.getItem("fav"))
+                : [];
+            }}
           />
         </div>
       </div>
@@ -116,8 +126,8 @@ Food.defaultProps = {
   cal: "0",
   time: "0",
   id: "0",
-  ingredients:[],
-  category:[]
+  ingredients: [],
+  category: [],
 };
 Food.prototypes = {
   img: PropTypes.string,
@@ -126,6 +136,6 @@ Food.prototypes = {
   cal: PropTypes.string,
   time: PropTypes.string,
   ingredients: PropTypes.array,
-  categories: PropTypes.array
+  categories: PropTypes.array,
 };
 export default Food;

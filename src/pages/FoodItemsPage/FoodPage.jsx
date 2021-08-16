@@ -8,7 +8,7 @@ function FoodPage() {
   const [clickedCategory, setClickedCategory] = useState("");
   const [food, setFood] = useState([]);
   const [showSearchResult, setShowSearch] = useState(false);
-  
+
   const Categories = foodData.categoryArray.map((cat) => (
     <Category
       key={cat.title}
@@ -20,7 +20,7 @@ function FoodPage() {
       }}
     />
   ));
-  
+
   const Foods = foodData.FoodArray.map((item) => (
     <Food
       key={item.title}
@@ -35,7 +35,7 @@ function FoodPage() {
   ));
 
   const Filtered = foodData.FoodArray.filter(
-    (item) => item.category.toLowerCase() == clickedCategory.toLowerCase()
+    (item) => item.category == clickedCategory
   );
 
   let FilteredArray = Filtered.map((item) => (
@@ -50,8 +50,8 @@ function FoodPage() {
   ));
 
   const handleSearch = (searchText) => {
-    const whatever = foodData.FoodArray.filter(
-      (item) => item.title.toLowerCase().startsWith(searchText.toLowerCase())
+    const whatever = foodData.FoodArray.filter((item) =>
+      item.title.toLowerCase().startsWith(searchText.toLowerCase())
     );
     FilteredArray = whatever.map((item) => (
       <Food
@@ -74,15 +74,13 @@ function FoodPage() {
       <div className="w-full h-11"></div>
       <div className="w-full h-9  flex align-center justify-center text-yellow-500 text-3xl  font-semibold flex-nowarp">
         <p>Let&apos;s Eat Quality Food</p>
-      </div>      
-        <SearchBar onSearch={handleSearch} />
-      <div
-        className="w-full h-20 flex overflow-x-scroll overflow-hidden pb-4"
-      >
+      </div>
+      <SearchBar onSearch={handleSearch} />
+      <div className="w-full h-20 flex overflow-x-scroll overflow-hidden pb-4 ml-2">
         {Categories}
       </div>
       <div id="align-food-div-center" className="flex align-center">
-        <div className="w-full flex flex-wrap content-around justify-center mb-8">
+        <div className="w-full flex flex-wrap content-around justify-around mb-4 mt-4">
           {showSearchResult ? food : isCatClicked}
         </div>
       </div>
