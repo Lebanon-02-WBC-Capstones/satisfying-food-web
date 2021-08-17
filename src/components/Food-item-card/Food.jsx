@@ -5,10 +5,12 @@ import { useHistory } from "react-router-dom";
 
 function Food({ img, title, cal, time, id, categories, ingredients }) {
   const storage = window.localStorage;
+  
   let fav = JSON.parse(storage.getItem("fav"))
     ? JSON.parse(storage.getItem("fav"))
     : [];
-  const currentItem = {
+  
+    const currentItem = {
     title: title,
     img: img,
     cal: cal,
@@ -17,6 +19,7 @@ function Food({ img, title, cal, time, id, categories, ingredients }) {
     categories: categories,
     ingredients: ingredients,
   };
+  
   const removeItem = (array, item) => {
     const index = array.findIndex(
       (element) => JSON.stringify(element) == JSON.stringify(item)
@@ -28,15 +31,19 @@ function Food({ img, title, cal, time, id, categories, ingredients }) {
   };
 
   let count = 0;
+  
   const [image, setImage] = useState(
     "https://image.flaticon.com/icons/png/128/833/833300.png"
   );
+  
   let history = useHistory();
+  
   function handleClick(e) {
     if (e.target.id != "fav") {
       history.push("/food/" + id);
     }
   }
+  
   return (
     <div
       className="bg-white h-56 rounded-lg shadow-2xl m-2"
@@ -122,7 +129,8 @@ function Food({ img, title, cal, time, id, categories, ingredients }) {
     </div>
   );
 }
-Foodd.defaultProps = {
+
+Food.defaultProps = {
   img: "https://image.flaticon.com/icons/png/512/1548/1548784.png",
   title: "Error",
   cal: "0",
@@ -131,7 +139,7 @@ Foodd.defaultProps = {
   ingredients: [],
   category: [],
 };
-Foodd.prototypes = {
+Food.prototypes = {
   img: PropTypes.string,
   title: PropTypes.string,
   id: PropTypes.string,
@@ -140,4 +148,4 @@ Foodd.prototypes = {
   ingredients: PropTypes.array,
   categories: PropTypes.array,
 };
-export default Foodd;
+export default Food;
