@@ -25,7 +25,7 @@ let favArray =fav.map((item) => (
           Favorites
         </h1>
 
-        <div id="align-food-div-center" className="flex flex-wrap -m-2">ls
+        <div id="align-food-div-center" className="flex flex-wrap -m-2">
           
         {favArray}
         
